@@ -7,6 +7,4 @@ Meteor.setInterval(function(){
   hosts.forEach(function (host) {
     Meteor.call('pingHost', host);
   });
-
-
-}, checkInterval);
+  },checkInterval);

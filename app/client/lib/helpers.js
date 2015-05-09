@@ -1,16 +1,16 @@
-Template.registerHelper("isActiveRoute", function(routeName) {
+Template.registerHelper('isActiveRoute', function(routeName) {
   if (Router.current().route.getName() === routeName) {
     return 'active';
   }
 });
 
-Template.registerHelper("routeIs", function(routeName) {
+Template.registerHelper('routeIs', function(routeName) {
   if (Router.current().route.getName() === routeName) {
     return true;
   }
 });
 
-Template.registerHelper("formatTime", function(timestamp) {
+Template.registerHelper('formatTime', function(timestamp) {
   if(timestamp === undefined){
     return false;
   };
@@ -18,7 +18,7 @@ Template.registerHelper("formatTime", function(timestamp) {
   return time.fromNow();
 });
 
-Template.registerHelper("label", function(string) {
+Template.registerHelper('label', function(string) {
   switch (string)
   {
     case 'online':
