@@ -1,12 +1,27 @@
 var hosts = [
   {
-    hostname: 'docker1.example.org',
-    ip: '192.168.2.43',
+    hostname: 'proxy',
+    ip: '192.168.2.74',
     status: 'offline'
   },
   {
-    hostname: 'dockers.example.org',
-    ip: '192.168.2.34',
+    hostname: 'docker1',
+    ip: '192.168.2.72',
+    status: 'offline'
+  },
+  {
+    hostname: 'cluster1',
+    ip: '192.168.2.69',
+    status: 'offline'
+  },
+  {
+    hostname: 'cluster2',
+    ip: '192.168.2.70',
+    status: 'offline'
+  },
+  {
+    hostname: 'docker2',
+    ip: '192.168.2.73',
     status: 'online'
   }
 ];
