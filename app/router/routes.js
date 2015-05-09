@@ -2,6 +2,16 @@ Router.route('/', 'dashboard', {
   name: 'home'
 });
 
-Router.route('/hosts', 'hosts', {
+// Deployment
+Router.route('/deployment', 'deployment', {
+  name: 'deployment'
+});
+
+// Inventory
+Router.route('/inventory/hosts', 'hosts', {
   name: 'hosts'
+});
+
+Router.route('/inventory/apps', 'apps', {
+  name: 'apps'
 });
