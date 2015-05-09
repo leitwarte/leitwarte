@@ -1,3 +1,10 @@
+var config = [
+  {
+    _id: 'default',
+    checkInterval: 5000
+  }
+];
+
 var hosts = [
   {
     hostname: 'proxy',
@@ -28,11 +35,16 @@ var hosts = [
 
 Meteor.startup(function () {
   if (HostsCollection.find().count() === 0) {
-
-
     while (hosts.length > 0) {
       HostsCollection.insert(hosts.pop());
     }
-    console.log('Added fixtures');
+    console.log('Added host fixtures');
   }
+  if (ConfigurationCollection.find().count() === 0) {
+    while (config.length > 0) {
+      ConfigurationCollection.insert(config.pop());
+    }
+    console.log('Added default configuration settings');
+  }
+
 });
