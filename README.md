@@ -10,6 +10,11 @@ Leitwarte is a tool to manage hosts, deploy software using [Ansible](http://www.
 
 later.
 
+## Implemented Functionality
+
+- View, add, edit, remove hosts
+- Health checks for hosts (ping)
+
 ## Roadmap
 
 Lots to do...
@@ -24,6 +29,9 @@ Lots to do...
 - Run Ansible playbooks from web UI
 - Manage variables (locally)
 - Set variables per host
+- Remove insecure package
+- Implement user roles
+- Deploy leitwarte as Docker container
 
 ## Legal stuff
 

@@ -1,1 +1,1 @@
-Template.hosts.onCreated(function () {  this.subscribe('hosts', {      limit: 10    });});
+

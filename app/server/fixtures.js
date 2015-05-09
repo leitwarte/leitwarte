@@ -5,6 +5,17 @@ var config = [
   }
 ];
 
+var apps = [
+  {
+    name: 'todos',
+    version: '1.0.0'
+  },
+  {
+    name: 'leitwarte',
+    version: '0.0.1-dev'
+  }
+];
+
 var hosts = [
   {
     hostname: 'proxy',
@@ -29,7 +40,7 @@ var hosts = [
   {
     hostname: 'docker2',
     ip: '192.168.2.73',
-    status: 'online'
+    status: 'offline'
   }
 ];
 
@@ -39,6 +50,12 @@ Meteor.startup(function () {
       HostsCollection.insert(hosts.pop());
     }
     console.log('Added host fixtures');
+  }
+  if (AppsCollection.find().count() === 0) {
+    while (apps.length > 0) {
+      AppsCollection.insert(apps.pop());
+    }
+    console.log('Added apps fixtures');
   }
   if (ConfigurationCollection.find().count() === 0) {
     while (config.length > 0) {

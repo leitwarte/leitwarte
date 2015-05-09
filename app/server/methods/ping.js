@@ -19,6 +19,7 @@ Meteor.methods({
         console.log(host.ip, responseTime[1] + ' ms');
         HostsCollection.update({_id: host._id},{$set: {
           lastSeen: new Date(),
+          latency: responseTime[1],
           status: 'online'
         }});
       }

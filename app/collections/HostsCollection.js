@@ -19,6 +19,13 @@ HostsCollection.attachSchema(new SimpleSchema({
     type: String,
     label: 'host status',
     defaultValue: 'offline',
+    allowedValues: ['online','offline','unknown'],
+    optional: true
+  },
+  latency: {
+    type: Number,
+    label: 'Reponse time in ms',
+    decimal: true,
     optional: true
   },
   lastSeen: {
