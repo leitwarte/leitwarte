@@ -11,3 +11,5 @@ less
 nemo64:bootstrap
 iron:router
 reactive-var
+aldeed:collection2
+aldeed:autoform
