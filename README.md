@@ -36,3 +36,4 @@ Lots to do...
 ## Legal stuff
 
 Image credits for [Old control room, Amagerværket](https://www.flickr.com/photos/chrisalban/15217591075/in/photolist-pbJ8DV-6yFtEQ-9heNod-aeS6DR-5GAAzH-5HVVA7-aeUUEo-LcStu-aeUR17-8wRCnr-9mSvA8-9mSwBB-5mLtF8-7SGUrP-7SLc4j-5mQHBd-a9WcZv-aadkD5-a9VWKa-5mQJFU-5mQMDG-6pZhsc-5mLuHg-4jyB6r-6hq6qH-5mQK3d-5mLuRV-dWKBKq-5mQK7j-dmtsHx-9FmLxa-4xXJjV-6yBo18-a9XtU5-5mLtwp-nUUL9h-6yBng4-6yFt4b-6yFtjY-6yFttu-6yFtnh-5mQMVu-cSbdeY-v2GNK-j2uT28-4jyB8D-4jCDKN-5mLx2x-5mLvmt-63FqNS) by Chris Alban Hansen, [Some rights reserved](https://creativecommons.org/licenses/by-sa/2.0/legalcode).
+Favicon [Maker's Start Button](http://openclipart.org/detail/176337/makers-start-button-by-algotruneman-176337) by [algotruneman](https://openclipart.org/user-detail/algotruneman).
