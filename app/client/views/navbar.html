@@ -12,20 +12,20 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    {{#if currentUser}}
+        {{#if currentUser}}
         <ul class="nav navbar-nav">
-            <li class="{{isActiveRoute 'deployment'}}">  {{#linkTo route="deployment"}}Deployment{{/linkTo}}</li>
+          <li class="{{isActiveRoute 'deployment'}}"> {{#linkTo route="deployment"}}Deployment{{/linkTo}}</li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Inventory <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-                <li class="{{isActiveRoute 'hosts'}}">  {{#linkTo route="hosts"}}Hosts{{/linkTo}}</li>
-                <li class="{{isActiveRoute 'apps'}}">  {{#linkTo route="apps"}}Apps{{/linkTo}}</li>
+              <li class="{{isActiveRoute 'hosts'}}"> {{#linkTo route="hosts"}}Hosts{{/linkTo}}</li>
+              <li class="{{isActiveRoute 'apps'}}"> {{#linkTo route="apps"}}Apps{{/linkTo}}</li>
             </ul>
           </li>
         </ul>
-    {{/if}}
+        {{/if}}
         <ul class="nav navbar-nav navbar-right">
-            {{> loginButtons}}
+          {{> loginButtons}}
         </ul>
       </div>
     </div>

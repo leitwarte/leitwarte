@@ -1,6 +1,4 @@
 <template name="hosts">
-  <h1>Host Overview</h1> {{> hostsOverview}}
-    {{#afModal class="btn btn-success" collection="HostsCollection" fields="hostname,ip" operation="insert"}} Add a new host {{/afModal}}
-    {{> autoformModals}}
+  <h1>Host Overview</h1> {{> hostsOverview}} {{#afModal class="btn btn-success" collection="HostsCollection" fields="hostname,ip" operation="insert"}} Add a new host {{/afModal}} {{> autoformModals}}
 
 </template>

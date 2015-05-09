@@ -4,9 +4,11 @@
       <tr>
         <th>Hostname</th>
         <th>IP</th>
-    {{#if routeIs 'hosts'}}<th>Last seen</th>{{/if}}
+        {{#if routeIs 'hosts'}}
+        <th>Last seen</th>{{/if}}
         <th>Status</th>
-    {{#if routeIs 'hosts'}}<th>Action</th>{{/if}}
+        {{#if routeIs 'hosts'}}
+        <th>Action</th>{{/if}}
       </tr>
     </thead>
     <tbody>
@@ -14,19 +16,16 @@
       <tr>
         <td>{{hostname}}</td>
         <td>{{ip}}</td>
-          {{#if routeIs 'hosts'}} <td>{{formatTime lastSeen}}</td>{{/if}}
+        {{#if routeIs 'hosts'}}
+        <td>{{formatTime lastSeen}}</td>{{/if}}
         <td>
-            <span class="label {{label status}}" data-toggle="tooltip" data-placement="right" title="{{latency}} ms" data-original-title="Tooltip on right">{{status}}</span>
+          <span class="label {{label status}}" data-toggle="tooltip" data-placement="right" title="{{latency}} ms" data-original-title="Tooltip on right">{{status}}</span>
         </td>
-              {{#if routeIs 'hosts'}}<td>
-            {{#afModal class="btn btn-default btn-xs" collection="HostsCollection" fields="hostname,ip" operation="update" doc=_id}}
-                Edit
-            {{/afModal}}
-            {{#afModal class="btn btn-danger btn-xs" collection="HostsCollection" operation="remove" doc=_id }}
-                Delete
-            {{/afModal}}
+        {{#if routeIs 'hosts'}}
+        <td>
+          {{#afModal class="btn btn-default btn-xs" collection="HostsCollection" fields="hostname,ip" operation="update" doc=_id}} Edit {{/afModal}} {{#afModal class="btn btn-danger btn-xs" collection="HostsCollection" operation="remove" doc=_id }} Delete {{/afModal}}
         </td>
-              {{/if}}
+        {{/if}}
       </tr>
       {{/each}}
     </tbody>

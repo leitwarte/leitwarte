@@ -1,6 +1,4 @@
 <template name="apps">
-    <h1>Apps Overview</h1> {{> appsOverview}}
-    {{#afModal class="btn btn-success" collection="AppsCollection" fields="name,version" operation="insert"}} Add a new app {{/afModal}}
-    {{> autoformModals}}
+  <h1>Apps Overview</h1> {{> appsOverview}} {{#afModal class="btn btn-success" collection="AppsCollection" fields="name,version" operation="insert"}} Add a new app {{/afModal}} {{> autoformModals}}
 
 </template>

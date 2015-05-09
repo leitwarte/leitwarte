@@ -1,29 +1,21 @@
 <template name="appsOverview">
-    <table class="table table-striped table-hover ">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Version</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each apps}}
-            <tr>
-                <td>{{name}}</td>
-                <td>{{version}}</td>
-                <td>
-                    <a href="#" class="btn btn-success btn-xs" data-id="{{_id}}">Deploy</a>
-                    {{#if routeIs 'apps'}}
-                    {{#afModal class="btn btn-default btn-xs" collection="AppsCollection" fields="name, version" operation="update" doc=_id}}
-                        Edit
-                    {{/afModal}}
-                    {{#afModal class="btn btn-danger btn-xs" collection="AppsCollection" operation="remove" doc=_id }}
-                        Delete
-                    {{/afModal}}
-                    {{/if}}
-                </td>
-            </tr>
-        {{/each}}
-        </tbody>
-    </table>
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Version</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each apps}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{version}}</td>
+        <td>
+          <a href="#" class="btn btn-success btn-xs" data-id="{{_id}}">Deploy</a> {{#if routeIs 'apps'}} {{#afModal class="btn btn-default btn-xs" collection="AppsCollection" fields="name, version" operation="update" doc=_id}} Edit {{/afModal}} {{#afModal class="btn btn-danger btn-xs" collection="AppsCollection" operation="remove" doc=_id }} Delete {{/afModal}} {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </template>
