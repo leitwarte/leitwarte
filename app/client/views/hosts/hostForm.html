@@ -1,9 +1,0 @@
-<template name="hostForm">
-  Showing the hostForm {{#modalEditComponent title="Edit a host"}} {{#autoForm collection="HostsCollection" id="hostForm" type="insert"}}
-  <fieldset>
-    <legend>Add a Host</legend>
-    {{> afQuickField name='hostname'}} {{> afQuickField name='ip'}}
-  </fieldset>
-  <button type="submit" class="btn btn-primary">Insert</button>
-  {{/autoForm}} {{/modalEditComponent}}
-</template>

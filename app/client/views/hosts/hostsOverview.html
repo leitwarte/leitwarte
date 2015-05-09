@@ -5,6 +5,7 @@
         <th>#</th>
         <th>Hostname</th>
         <th>IP</th>
+        <th>Last seen</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -14,10 +15,10 @@
         <td>1</td>
         <td>{{hostname}}</td>
         <td>{{ip}}</td>
+        <td>{{lastSeen}}</td>
         <td>{{status}}</td>
       </tr>
       {{/each}}
     </tbody>
   </table>
-  <button class="btn btn-success" id="add-host">Add a new host</button>
 </template>
