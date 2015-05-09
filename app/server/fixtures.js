@@ -1,7 +1,7 @@
 var config = [
   {
     _id: 'default',
-    checkInterval: 5000
+    checkInterval: 60000
   }
 ];
 

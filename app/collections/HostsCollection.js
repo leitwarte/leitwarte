@@ -2,27 +2,28 @@ HostsCollection = new Mongo.Collection('hosts');
 HostsCollection.attachSchema(new SimpleSchema({
   hostname: {
     type: String,
-    label: "Unique Hostname",
+    label: 'Unique Hostname',
     max: 256,
     index: true,
     unique: true,
-    regEx: /(?=^.{1,254}$)(^(?:(?!\d+\.)[a-zA-Z0-9_\-]{1,63}\.?)+(?:[a-zA-Z]{2,})$)/
+    regEx: /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/
   },
   ip: {
     type: String,
-    label: "IP Address",
+    label: 'IP Address',
     index: true,
     unique: true,
     regEx: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
   },
   status: {
     type: String,
-    label: "host status",
+    label: 'host status',
+    defaultValue: 'offline',
     optional: true
   },
   lastSeen: {
     type: Date,
-    label: "Last time host was seen",
+    label: 'Last time host was seen',
     optional: true
   }
 }));

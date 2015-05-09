@@ -11,12 +11,12 @@ Meteor.methods({
 
 
       if(error !== null) {
-        console.log('exec error: ' + error);
+        console.log(host.ip + ' exec error: ' + error);
         HostsCollection.update({_id: host._id},{$set: {
           status: 'offline'
         }});
       }else {
-        console.log(host.ip,responseTime[1]);
+        console.log(host.ip, responseTime[1] + ' ms');
         HostsCollection.update({_id: host._id},{$set: {
           lastSeen: new Date(),
           status: 'online'
