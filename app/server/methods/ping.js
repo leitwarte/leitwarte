@@ -26,4 +26,4 @@ Meteor.methods({
     };
     exec(command, Meteor.bindEnvironment(readResults));
   }
-})
+});
