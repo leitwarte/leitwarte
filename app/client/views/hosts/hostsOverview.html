@@ -1,0 +1,23 @@
+<template name="hostsOverview">
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Hostname</th>
+        <th>IP</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each hosts}}
+      <tr>
+        <td>1</td>
+        <td>{{hostname}}</td>
+        <td>{{ip}}</td>
+        <td>{{status}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button class="btn btn-success" id="add-host">Add a new host</button>
+</template>

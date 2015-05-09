@@ -1,12 +1,18 @@
+Template.hosts.onCreated(function() {
+  this.showModal = new ReactiveVar(false);
+});
+
 Template.hosts.helpers({
-  hosts: function () {
-    return Session.get('counter');
+  showModal: function () {
+    console.log('show', Template.instance().showModal.get());
+    return Template.instance().showModal.get();
   }
 });
 
 Template.hosts.events({
-  'click button': function () {
-    // increment the counter when button is clicked
-    Session.set('counter', Session.get('counter') + 1);
+  'click button#add-host': function (evt,tpl) {
+    console.log('show Modal');
+    // TODO: Modal is not showing, only HTML gets rendered
+    tpl.showModal.set(true);
   }
 });

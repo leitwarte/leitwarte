@@ -1,0 +1,21 @@
+<!-- TODO: Use components for ui -->
+<template name="tableComponent">
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        {{#each this.headerCol}}
+        <th>{{this}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{> UI.contentBlock}}
+    </tbody>
+  </table>
+</template>
+
+<template name="tableRowComponent">
+  <tr>
+    {{> UI.contentBlock}}
+  </tr>
+</template>

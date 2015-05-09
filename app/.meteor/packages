@@ -5,9 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 udondan:yml
 less
 nemo64:bootstrap
 iron:router
+reactive-var
