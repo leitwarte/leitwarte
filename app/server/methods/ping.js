@@ -1,29 +1,34 @@
+
+
+
+
 Meteor.methods({
   'pingHost': function(host){
     this.unblock();
-    exec = Npm.require('child_process').exec;
-    var pingCommand = 'ping -c 1 ';
-    var command = pingCommand + host.ip;
+    ping = Meteor.npmRequire('jjg-ping')
 
-    var readResults = function (error, stdout, stderr) {
-      var re = /time=(\d+.\d+) ms/;
-      var responseTime = stdout.match(re);
+    console.log("Performing ping on: " + host.ip)
+
+    ping.system.ping('google.com', function(latency, status) {
+        if (status) {
+            // Host is reachable/up. Latency should have a value.
+            console.log('Google is reachable (' + latency + ' ms ping).');
+        }
+        else {
+            // Host is down. Latency should be 0.
+            console.log('Google is unreachable.');
+        }
+    });
 
 
-      if(error !== null) {
-        console.log(host.ip + ' exec error: ' + error);
-        HostsCollection.update({_id: host._id},{$set: {
-          status: 'offline'
-        }});
-      }else {
-        console.log(host.ip, responseTime[1] + ' ms');
+    /*
+    
         HostsCollection.update({_id: host._id},{$set: {
           lastSeen: new Date(),
           latency: responseTime[1],
           status: 'online'
         }});
-      }
-    };
-    exec(command, Meteor.bindEnvironment(readResults));
+    */
+
   }
 });
