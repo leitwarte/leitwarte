@@ -1,5 +1,4 @@
-var checkInterval = ConfigurationCollection.findOne().checkInterval;
-console.log('checkInterval', checkInterval);
+var checkInterval = ConfigurationCollection.findOne() ? ConfigurationCollection.findOne().checkInterval : 60000;
 
 Meteor.setInterval(function () {
   var hosts = HostsCollection.find({}, {
