@@ -1,4 +1,4 @@
-var checkInterval = 60000;
+var checkInterval = ConfigurationCollection.findOne().checkInterval;
 console.log('checkInterval', checkInterval);
 
 Meteor.setInterval(function () {
