@@ -36,14 +36,13 @@ iron:url@1.0.7
 jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
+leitwarte:ping@0.0.1
 less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
 meteor@1.1.6
 meteor-platform@1.2.2
-meteorhacks:async@1.0.0
-meteorhacks:npm@1.3.0
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
