@@ -1,34 +1,42 @@
+var pingWrapped = function(host){
+  var Future = Npm.require('fibers/future');
+  var ping = Meteor.npmRequire('jjg-ping')
+  var future = new Future();
+  
+  ping.system.ping(host, function(latency, status){
+    var statusText = "offline";
+    
+    status ? statusText = "online" : statusText = "offline"  
 
 
+    future.return({latency: latency, online: status, status: statusText});
+  });
+
+  return future.wait();
+}
 
 
 Meteor.methods({
   'pingHost': function(host){
     this.unblock();
-    ping = Meteor.npmRequire('jjg-ping')
 
-    console.log("Performing ping on: " + host.ip)
+    var pingRes = pingWrapped(host.ip);
 
-    ping.system.ping('google.com', function(latency, status) {
-        if (status) {
-            // Host is reachable/up. Latency should have a value.
-            console.log('Google is reachable (' + latency + ' ms ping).');
-        }
-        else {
-            // Host is down. Latency should be 0.
-            console.log('Google is unreachable.');
-        }
-    });
-
-
-    /*
+    console.log("Host " + host.ip + ": " + pingRes.status + " " + pingRes.latency + "ms")
     
-        HostsCollection.update({_id: host._id},{$set: {
-          lastSeen: new Date(),
-          latency: responseTime[1],
-          status: 'online'
-        }});
-    */
+    if(pingRes.online){
+      HostsCollection.update({_id: host._id},{$set: {
+        lastSeen: new Date(),
+        latency: pingRes.latency,
+        status: pingRes.status
+      }});
+    } else {
+      HostsCollection.update({_id: host._id},{$set: {
+        status: pingRes.status
+      }});
+    }
+
+
 
   }
 });
