@@ -2,7 +2,7 @@ Meteor.methods({
   'pingHost': function(host){
     this.unblock();
 
-    var pingRes = pingWrapped(host.ip);
+    var pingRes = Ping.host(host.ip);
 
     console.log("Host " + host.ip + ": " + pingRes.status + " " + pingRes.latency + "ms")
     
