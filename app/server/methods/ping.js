@@ -4,7 +4,7 @@ Meteor.methods({
 
     var pingRes = Ping.host(host.ip);
 
-    console.log("Host " + host.ip + ": " + pingRes.status + " " + pingRes.latency + "ms")
+    console.log('Host ' + host.ip + ': ' + pingRes.status + ' ' + pingRes.latency + 'ms');
     
     if(pingRes.online){
       HostsCollection.update({_id: host._id},{$set: {
