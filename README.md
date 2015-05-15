@@ -17,7 +17,7 @@ later.
 
 ## Roadmap
 
-Lots to do...
+Lots to do... see the [Trello board](https://trello.com/b/Fracwcz8/leitwarte-roadmap).
 
 - Manage hosts (deployment targets)
 - Provide overview of known hosts
