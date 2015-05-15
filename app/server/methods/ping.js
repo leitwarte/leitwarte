@@ -5,16 +5,12 @@ var pingWrapped = function(host){
   
   ping.system.ping(host, function(latency, status){
     var statusText = "offline";
-    
     status ? statusText = "online" : statusText = "offline"  
-
-
     future.return({latency: latency, online: status, status: statusText});
   });
 
   return future.wait();
 }
-
 
 Meteor.methods({
   'pingHost': function(host){
@@ -35,8 +31,5 @@ Meteor.methods({
         status: pingRes.status
       }});
     }
-
-
-
   }
 });
