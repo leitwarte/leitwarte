@@ -4,7 +4,6 @@ Template.appsOverview.onCreated(function () {
   });
 });
 
-
 Template.appsOverview.helpers({
   apps: function () {
     return AppsCollection.find();
